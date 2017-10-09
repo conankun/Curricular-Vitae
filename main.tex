@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{red} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.85]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%     Define commands
+%----------------------------------------------------------------------------------------
+
+\newlength\listtripleitemmaincolumnwidth
+
+\makeatletter
+\renewcommand*{\recomputecvlengths}{%
+  \setlength{\quotewidth}{0.65\textwidth}%
+  \setlength{\maincolumnwidth}{\textwidth-\separatorcolumnwidth-\hintscolumnwidth}%
+  \setlength{\listitemmaincolumnwidth}{\maincolumnwidth-\listitemsymbolwidth}%
+  \setlength{\doubleitemmaincolumnwidth}{\maincolumnwidth-\hintscolumnwidth-\separatorcolumnwidth-\separatorcolumnwidth}%
+  \setlength{\doubleitemmaincolumnwidth}{0.5\doubleitemmaincolumnwidth}%
+  \setlength{\listdoubleitemmaincolumnwidth}{\maincolumnwidth-\listitemsymbolwidth-\separatorcolumnwidth-\listitemsymbolwidth}%
+  \setlength{\listdoubleitemmaincolumnwidth}{0.5\listdoubleitemmaincolumnwidth}%
+  \setlength\listtripleitemmaincolumnwidth{.66\listdoubleitemmaincolumnwidth}%
+  \renewcommand{\headwidth}{\textwidth}%
+  \setlength{\parskip}{0\p@}%
+}
+\makeatother
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvline{}{%
+  \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#1\end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}%
+ }%
+}
+
+
+\newcommand{\cvreference}[7]{%
+  \textbf{#1}\newline% Name
+  \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+  \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+  \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+  \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+  \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+  \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Junghyun} % Your first name
+\familyname{Kim} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+\address{455 14TH ST NW}{Atlanta, GA, 30318}
+\mobile{(+470) 728 2232}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{conankun@gatech.edu}
+\homepage{www.linkedin.com/in/jkim904}{www.linkedin.com/in/jkim904} % The first argument is %the url for the clickable link, the second argument is the url displayed in the %template - this allows special characters to be displayed such as the tilde in this %example
+%\extrainfo{additional information}
+%\photo[70pt][0.4pt]{picture} % The first bracket is the picture height, the second is %the thickness of the frame around the picture (0pt for no frame)
+\quote{My Research Interest lies in theoretical computer science such as Algorithm, Optimization, Data Structure, Cryptography, Data science, High Performance Computing, and Machine Learning.}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2018--2019}{M.S in Computer Science}{}{}{}{Georgia Institute of Technology, Atlanta, GA}  % Arguments not required can be left empty
+
+
+\cventry{2015--2017}{B.S in Computer Science}{}{}{}{Georgia Institute of Technology, Atlanta, GA\\Threads (Concentration): Theory \& Intelligence \\GPA: 3.75}  % Arguments not required can be left empty
+
+\cventry{2015--2018}{B.S in Mathematics}{}{}{}{Georgia Institute of Technology, Atlanta, GA}  % Arguments not required can be left empty
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Research Experience}
+
+
+\cventry{Aug 2017 - Present}{Research Assistant}{HPC Garage}{Georgia Institute of Technology}{}{\begin{itemize}
+\item Conducted a research on accelerating Tensor Factorization algorithm using CPU and GPU based parallelism. 
+\item Tuned parameter (block size) by finding the relationship between fill (the measure of how zero-elements are included using that block size) and operation time.
+\item Advisor: Richard Vuduc
+\end{itemize}}
+
+\cventry{Jun 2017 - Aug 2017}{Research Intern}{Security Lab}{Software R\&D Center}{Samsung Electronics}{\begin{itemize}\item Conducted a research on privacy preserving fingerprint authentication based on Minutiae points with Function-hiding Inner Product Encryption (IPE) so that no privacy is leaked even when either the server or device is hacked.
+\item Surveyed previous (non-privacy preserving) biometric encryption schemes and fingerprint matching methods.
+\item Devised a method to align the reference of fingerprint images consistently.
+\item Implemented prototype of privacy preserving fingerprint authentication protocol and tested over a large dataset.
+\item Advisor: Jinsu Kim and Junbum Shin\end{itemize}}
+
+\cventry{Aug 2016 - Present}{Research Assistant}{Stadium - IoPT: Frequency Coordination}{Georgia Institute of Technology}{}{\begin{itemize}
+\item Worked on developing software that analyzes frequency sweep and helps assigning frequencies to agencies during the football game.
+\item Worked on visualizing and analyzing data from sensors in the football stadium at Georgia Tech.
+\item Advisor: Edward J Coyle and Randal T Abler
+\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+%	Publication
+%----------------------------------------------------------------------------------------
+
+\section{Publication}
+\subsection{In preparation}
+\cvitem{}{\textbf{Junghyun Kim}, Jinsu Kim, and Junbum Shin. Privacy Preserving Fingerprint Matching Protocols via Inner Product Encryption}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Teaching Experience}
+\cventry{Spring 2016, Fall 2017}{Teaching Assistant}{}{}{}{\begin{itemize}
+\item CS 4510: Automata and Complexity (Fall 2017) \\ Instructor: Alexandera Boldyreva \\ Class Size: 124 Students\\
+\item CS 2051: Honors Discrete Math (Spring 2016) \\ Instructor: Richard J. Lipton \\ Class Size: 35 Students\\
+\end{itemize}}
+% grader
+\cventry{Fall 2016-\\Fall 2017}{Grader}{}{}{}{\begin{itemize}
+\item MATH 3012: Applied Combinatorics (Fall 2017)\\ Instructor: Fidel Barrera-Cruz\\ Class Size: 52 Students\\
+\item MATH 3012: Applied Combinatorics (Spring 2017)\\ Instructor: Fidel Barrera-Cruz\\ Class Size: 73 Students\\
+\item MATH 3012: Applied Combinatorics (Spring 2017)\\ Instructor: Ernie Croot\\ Class Size: 84 Students\\
+\item MATH 3012: Applied Combinatorics (Fall 2016)\\ Instructor: Fidel Barrera-Cruz\\ Class Size: 51 Students\\
+\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+%	MEMBERSHIP SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Membership}
+\cventry{May.2016-Present}{Association for Computing Machinery (ACM)}{}{}{}{}
+\cventry{Jul.2017-Present}{Institute of Electrical and Electronics Engineers (IEEE)}{}{}{}{}
+
+\cventry{Aug.2015-Present}{Korean Computer Science (GT KCS)}{}{}{}{President (May 2017 - Present), Member (Aug 2015 - Apr 2017)}
+
+\cventry{Aug.2015-Present}{Korean-American Scientists and Engineers Association (KSEA)}{}{}{}{}
+%----------------------------------------------------------------------------------------
+%	Honors SECTION
+%----------------------------------------------------------------------------------------
+\section{Honors and Awards}
+\subsection{Grant}
+\cventry{Jan 2018}{Travel Grant for Ygnite 2018}{}{}{\$100 in addition to lodging and meals}{}
+\subsection{Honors}
+\cventry{Spring 2017}{Dean's List}{Georgia Institute of Technology}{Atlanta, GA}{}{}
+\cventry{Fall 2016}{Dean's List}{Georgia Institute of Technology}{Atlanta, GA}{}{}
+\cventry{Spring 2016}{Faculty Honors}{Georgia Institute of Technology}{Atlanta, GA}{}{}
+\cventry{Fall 2015}{Dean's List}{Georgia Institute of Technology}{Atlanta, GA}{}{}
+\cventry{Jul. 2011}{Korea Olympiad in Informatics - National}{Silver Award}{National Information Society Agency, South Korea}{}{}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Computer skills}
+
+\cvitem{Languages}{C/C++, \textsc{CUDA}, \textsc{Java}, \textsc{Python}, \textsc{PHP}, \textsc{HTML}, \textsc{CSS}, \textsc{Javascript}, \LaTeX}
+\cvitem{Framework}{Node.js, Django}
+\cvitem{Library}{OpenMP, JQuery}
+\cvitem{Database}{MYSQL}
+\cvitem{Operating Systems}{Microsoft Windows, Mac OS, Linux (Ubuntu)}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE SECTION
+%----------------------------------------------------------------------------------------
+\section{References}
+
+\cvdoublecolumn{\cvreference{Richard J. Lipton}{College of Computing}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{richard.lipton@cc.gatech.edu}{}}{\cvreference{Fidel Barrera-Cruz
+}{Department of Mathematics}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{fidelbc@math.gatech.edu}{}}
+
+\cvdoublecolumn{\cvreference{Edward J Coyle}{School of Electrical and Computer Engineering}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{ejc@gatech.edu}{}}{\cvreference{Randal T Abler}{School of Electrical and Computer Engineering}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{randal.abler@gatech.edu}{}}
+
+\cvdoublecolumn{\cvreference{Ernie Croot}{Department of Mathematics}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{ecroot@math.gatech.edu}{}}{\cvreference{Jinsu Kim}{Software R\&D Center}{Samsung Electronics}{Seoul, South Korea}{}{jinsu86@samsung.com}{}}
+
+
+  \cvdoublecolumn{\cvreference{Junbum Shin}{Software R\&D Center}{Samsung Electronics}{Seoul, South Korea}{}{junbum.shin@samsung.com}{}}{\cvreference{Richard Vuduc}{College of Computing}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{richie@cc.gatech.edu}{}}
+
+\cvdoublecolumn{\cvreference{Alexandera Boldyreva}{College of Computing}{Georgia Institute of Technology}{Atlanta, GA 30332}{}{sasha.boldyreva@cc.gatech.edu}{}}{}
+
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+%\clearpage
+
+%\recipient{HR Departmnet}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
+%\date{\today} % Letter date
+%\opening{Dear Sir or Madam,} % Opening greeting
+%\closing{Sincerely yours,} % Closing phrase
+%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+%\makelettertitle % Print letter title
+
+%\lipsum[1-3] % Dummy text
+
+%\makeletterclosing % Print letter signature
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
